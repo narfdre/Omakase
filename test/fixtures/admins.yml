@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  credentials: MyString
+  provider: MyString
+  belongs_to: 
+
+two:
+  credentials: MyString
+  provider: MyString
+  belongs_to: 
