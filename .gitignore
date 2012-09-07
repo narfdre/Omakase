@@ -15,5 +15,5 @@
 /tmp
 
 # Ignore DB settings
-Gemfile*
 /config/database.yml
+Gemfile*
