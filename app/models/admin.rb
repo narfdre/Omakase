@@ -1,3 +1,4 @@
 class Admin < ActiveRecord::Base
-  attr_accessible :belongs_to, :credentials, :provider
+  attr_accessible :credentials, :provider
+  belongs_to :user
 end
