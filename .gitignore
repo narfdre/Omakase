@@ -16,4 +16,4 @@
 
 # Ignore DB settings
 Gemfile*
-config/database.yml
+/config/database.yml
