@@ -15,5 +15,4 @@
 /tmp
 
 # Ignore DB settings
-/config/database.yml
 Gemfile*
