@@ -3,7 +3,7 @@ class CreateAdmins < ActiveRecord::Migration
     create_table :admins do |t|
       t.string :credentials
       t.string :provider
-      t.belongs_to :users
+      t.references :user
 
       t.timestamps
     end
