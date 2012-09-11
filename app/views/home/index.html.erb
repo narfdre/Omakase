@@ -21,14 +21,14 @@
   </div>
 </div>
 <header class="header">
-  <div class="container">
+  <div class="container-fluid">
     <h1>Welcome to Omakase</h1>
   </div>
 </header>
 <div class="container-fluid">
   <% @products.each do |i| %>
     <a href="/products/<%= i.id%>">
-      <%= image_tag(i.image, :class => "img-polaroid")%>
+      <%= image_tag(i.image_url, :class => "img-polaroid thumbnail")%>
     </a>
   <% end %>
 </div>
