@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+	$('.nav li a').on('click', setActiveNav);
+
+	function setActiveNav(e){
+		var currentNav = $(e.target).closest('li'),
+			navs = currentNav.siblings();
+		navs.removeClass('active');
+		currentNav.addClass('active');
+	}
+});
