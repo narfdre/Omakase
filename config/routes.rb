@@ -1,5 +1,7 @@
 Omakase::Application.routes.draw do
+  root :to => 'home#index'
   resources :products
+  match "/images/uploads/*path" => "gridfs#serve"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
