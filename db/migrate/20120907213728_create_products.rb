@@ -8,9 +8,9 @@ class CreateProducts < ActiveRecord::Migration
       t.boolean :featured
       t.boolean :display
       t.string :artist
-      t.references :image
-      t.references :user
-
+      t.string :referer
+      t.string :contact
+      
       t.timestamps
     end
   end

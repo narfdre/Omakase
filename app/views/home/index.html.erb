@@ -1,34 +1,15 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="/">Omakase</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li>
-            <a href="#">Upload</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<header class="header">
-  <div class="container-fluid">
-    <h1>Welcome to Omakase</h1>
-  </div>
-</header>
-<div class="container-fluid">
-  <% @products.each do |i| %>
-    <a href="/products/<%= i.id%>">
-      <%= image_tag(i.image_url, :class => "img-polaroid thumbnail")%>
-    </a>
-  <% end %>
+<div class="container">
+	<header class="header">
+	  <div class="hero-unit">
+	  <h1>Omakase!</h1>
+	  <p>Chef's Choice, please enjoy the hand picked products.</p>
+	</div>
+	</header>
+	<div class="container-fluid">
+	  <% @products.each do |i| %>
+	    <a href="/products/<%= i.id%>">
+	      <%= image_tag(i.image_url, :class => "img-polaroid thumbnail")%>
+	    </a>
+	  <% end %>
+	</div>
 </div>

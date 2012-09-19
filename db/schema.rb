@@ -13,32 +13,17 @@
 
 ActiveRecord::Schema.define(:version => 20120910173359) do
 
-  create_table "admins", :force => true do |t|
-    t.string   "credentials"
-    t.string   "provider"
-    t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "images", :force => true do |t|
-    t.binary   "data"
-    t.string   "name"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.binary   "image"
+    t.string   "image"
     t.string   "source"
     t.string   "merchant"
     t.boolean  "featured"
     t.boolean  "display"
     t.string   "artist"
-    t.integer  "user_id"
+    t.string   "referer"
+    t.string   "contact"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -60,7 +45,8 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "twitter"
+    t.string   "provider"
+    t.string   "identifier"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
