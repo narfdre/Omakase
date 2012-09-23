@@ -1,0 +1,42 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "admin.js" %>
+<% end %>
+
+<div class="container">
+	<% if !notice.blank? %>
+		<div class="alert">
+		  <button type="button" class="close" data-dismiss="alert">×</button>
+		  <%= notice %>
+		</div>
+	<% end%>
+	<h1>Admin</h1>
+	<p>use this table to manage uploads</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Source</th>
+				<th>Merchant</th>
+				<th>Artist</th>
+				<th>Referer</th>
+				<th>Regerer's Contact</th>
+				<th>Featured</th>
+				<th>Display</th>
+			</tr>
+		</thead>
+		<tbody>
+		  <% @products.each do |i| %>
+		    <tr data-content="<img src=&quot;<%=i.image %>&quot;/>" data-trigger="hover" data-placement="bottom" data-html="true">	
+		    	<td><%=i.name %></td>
+		    	<td><%=i.source %></td>
+		    	<td><%=i.merchant %></td>
+		    	<td><%=i.artist %></td>
+		    	<td><%=i.referer %></td>
+		    	<td><%=i.contact %></td>
+		    	<td><%=i.featured %></td>
+		    	<td><%=i.display %></td>
+		    </tr>
+		  <% end %>
+		</tbody>
+	</table>
+</div>
