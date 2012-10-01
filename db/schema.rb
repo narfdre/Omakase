@@ -16,11 +16,10 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "image"
     t.string   "source"
-    t.string   "merchant"
     t.boolean  "featured"
     t.boolean  "display"
+    t.boolean  "deleted"
     t.string   "artist"
     t.string   "referer"
     t.string   "contact"
@@ -45,8 +44,7 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "provider"
-    t.string   "identifier"
+    t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
