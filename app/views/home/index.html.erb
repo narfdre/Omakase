@@ -1,3 +1,9 @@
+<div class="awesome-header">
+	<div class="container">
+		<h1>Omakase!</h1>
+		<p>Chef's Choice, please enjoy the hand picked products.</p>
+	</div>	
+</div>
 <div class="container">
 	<% if !notice.blank? %>
 		<div class="alert">
@@ -5,15 +11,9 @@
 		  <%= notice %>
 		</div>
 	<% end%>
-	<header class="header">
-	  <div class="hero-unit">
-	  <h1>Omakase!</h1>
-	  <p>Chef's Choice, please enjoy the hand picked products.</p>
-	</div>
-	</header>
 	<div class="container-fluid">
 	  <% @products.each do |i| %>
-	    <a href="/products/<%= i.id%>">
+	    <a class="image-wrapper" href="/products/<%= i.id%>">
 	      <%= image_tag(i.image_url, :class => "img-polaroid thumbnail")%>
 	    </a>
 	  <% end %>

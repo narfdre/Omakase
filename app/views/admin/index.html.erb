@@ -16,7 +16,6 @@
 			<tr>
 				<th>Name</th>
 				<th>Source</th>
-				<th>Merchant</th>
 				<th>Artist</th>
 				<th>Referer</th>
 				<th>Regerer's Contact</th>
@@ -26,10 +25,9 @@
 		</thead>
 		<tbody>
 		  <% @products.each do |i| %>
-		    <tr data-content="<img src=&quot;<%=i.image %>&quot;/>" data-trigger="hover" data-placement="bottom" data-html="true">	
+		    <tr data-content="<img src=&quot;<%=i.image %>&quot;/>" data-trigger="hover" data-placement="bottom" data-html="true">
 		    	<td><%=i.name %></td>
 		    	<td><%=i.source %></td>
-		    	<td><%=i.merchant %></td>
 		    	<td><%=i.artist %></td>
 		    	<td><%=i.referer %></td>
 		    	<td><%=i.contact %></td>

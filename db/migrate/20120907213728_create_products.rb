@@ -10,6 +10,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :artist
       t.string :referer
       t.string :contact
+      t.string :image
       
       t.timestamps
     end

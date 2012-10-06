@@ -1,4 +1,6 @@
+require 'bcrypt'
 class User < ActiveRecord::Base
+  include BCrypt
   attr_accessible :email, :name, :password
 
   before_save :encrypt_password
@@ -10,9 +12,9 @@ class User < ActiveRecord::Base
     user = find_by_email(email)
     pwdHash = BCrypt::Password.new(user.password);
     if user &&  pwdHash == password
-      user
+      return user
     else
-      nil
+      return nil
     end
   end
   

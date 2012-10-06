@@ -1,46 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      <%= image_tag @product.image %>
+    </div>
+    <div class="span6">
+      <p>
+        <b>Name:</b>
+        <%= @product.name %>
+      </p>
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+      <p>
+        <b>Description:</b>
+        <%= @product.description %>
+      </p>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
+      <p>
+        <b>Source:</b>
+        <%= @product.source %>
+      </p>
 
-<p>
-  <b>Image:</b>
-  <%= @product.image %>
-  <%= image_tag @product.image %>
-</p>
+      <p>
+        <b>Merchant:</b>
+        <%= @product.source %>
+      </p>
 
-<p>
-  <b>Source:</b>
-  <%= @product.source %>
-</p>
+      <p>
+        <b>Artist:</b>
+        <%= @product.artist %>
+      </p>
 
-<p>
-  <b>Merchant:</b>
-  <%= @product.merchant %>
-</p>
-
-<p>
-  <b>Featured:</b>
-  <%= @product.featured %>
-</p>
-
-<p>
-  <b>Display:</b>
-  <%= @product.display %>
-</p>
-
-<p>
-  <b>Artist:</b>
-  <%= @product.artist %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+      <p>
+        <b>from:</b>
+        <%= @product.referer %>
+      </p>
+    </div>
+  </div>
+</div>

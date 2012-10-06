@@ -1,0 +1,22 @@
+<div class="container">
+	<h1>Log In</h1>
+	<%= form_for @user, :url => {:action => 'login'}, :html => { :class => 'form-horizontal' } do |f| %>
+		<div class="field control-group">
+			<%= f.label :email, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.text_field :email %>
+			</div>
+		</div>
+		<div class="field control-group">
+			<%= f.label :password, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.password_field :password %>
+			</div>
+		</div>
+		<div class="actions control-group">
+			<div class="controls">
+				<%= f.submit 'Log In', :class=> 'btn btn-primary'%>
+			</div>
+		</div>
+	<% end %>
+</div>

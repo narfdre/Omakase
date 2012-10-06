@@ -1,0 +1,47 @@
+<div class="container">
+	<% if !notice.blank? %>
+		<div class="alert">
+		  <button type="button" class="close" data-dismiss="alert">×</button>
+		  <%= notice %>
+		</div>
+	<% end%>
+	<h1>Set Up</h1>
+	<p>Looks like this is your first time using Omakase. Please fill out the following form to get started. We will then redirect you to the admin page.</p>
+	<%= form_tag("/setup", :method => "post", :class => "form-horizontal") do %>
+		<div class="field control-group">
+			<%= label_tag :name, "Name", :class => 'control-label' %>
+			<div class="controls">
+				<%= text_field :user, :name %>
+			</div>
+		</div>
+		<div class="field control-group">
+			<%= label_tag :email, "Email", :class => 'control-label' %>
+			<div class="controls">
+				<%= text_field :user, :email %>
+			</div>
+		</div>
+		<div class="field control-group">
+			<%= label_tag :password, "Password", :class => 'control-label' %>
+			<div class="controls">
+				<%= password_field :user, :password %>
+			</div>
+		</div>
+		<div class="field control-group">
+			<%= label_tag :app_name, "Application's Name", :class => 'control-label' %>
+			<div class="controls">
+				<%= text_field :settings, :app_name %>
+			</div>
+		</div>
+		<div class="field control-group">
+			<%= label_tag :product_type, "Product Type", :class => 'control-label' %>
+			<div class="controls">
+				<%= text_field :settings, :product_type %>
+			</div>
+		</div>
+		<div class="field control-group">
+			<div class="controls">
+				<%= submit_tag "Start using omakase!", :class => "btn btn-primary" %>
+			</div>
+		</div>
+	<% end %>
+</div>

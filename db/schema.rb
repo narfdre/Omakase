@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
     t.string   "artist"
     t.string   "referer"
     t.string   "contact"
+    t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
