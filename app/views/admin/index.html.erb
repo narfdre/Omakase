@@ -3,7 +3,7 @@
 <% end %>
 <% content_for :links do %>
 	<li>
-		<a href="/logout">Logout</a>
+		<a href="/logout"><span class="icon-signout"></span>Logout</a>
 	</li>
 <% end %>
 
@@ -24,8 +24,8 @@
 				<th>Artist</th>
 				<th>Referer</th>
 				<th>Referer's Contact</th>
-				<th>Featured</th>
-				<th>Display</th>
+				<th class="text-center">Featured</th>
+				<th class="text-center">Display</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -36,8 +36,20 @@
 		    	<td><%=i.artist %></td>
 		    	<td><%=i.referer %></td>
 		    	<td><%=i.contact %></td>
-		    	<td><%=i.featured %></td>
-		    	<td><%=i.display %></td>
+		    	<td class="text-center">
+		    		<%if i.featured %>
+		    			<span class="icon-star"></span>
+		    		<% else %>
+						<span class="icon-star-empty"></span>
+		    		<% end %>
+		    	</td>
+		    	<td class="text-center">
+		    		<% if i.display %>
+		    			<span class="icon-check"></span>
+		    		<% else %>
+						<span class="icon-check-empty"></span>
+		    		<% end %>
+		    	</td>
 		    </tr>
 		  <% end %>
 		</tbody>
