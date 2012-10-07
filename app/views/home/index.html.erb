@@ -1,7 +1,11 @@
 <div class="awesome-header">
 	<div class="container">
 		<h1>Omakase!</h1>
-		<p>Chef's Choice, please enjoy the hand picked products.</p>
+		<% if @settings %>
+			<p>Chef's Choice, please enjoy the hand picked <%= @settings.product_type %>.</p>
+		<% else %>
+			<p>Chef's Choice, please enjoy the hand picked products.</p>
+		<% end %>
 	</div>	
 </div>
 <div class="container">
@@ -13,8 +17,8 @@
 	<% end%>
 	<div class="container-fluid">
 	  <% @products.each do |i| %>
-	    <a class="image-wrapper" href="/products/<%= i.id%>">
-	      <%= image_tag(i.image_url, :class => "img-polaroid thumbnail")%>
+	    <a class="image-wrapper center-thumb img-polaroid" href="/products/<%= i.id%>">
+	      <%= image_tag(i.image_url(:thumb))%>
 	    </a>
 	  <% end %>
 	</div>

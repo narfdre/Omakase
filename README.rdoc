@@ -1,3 +1,9 @@
 == Welcome to Omakase
 
 A Rails based app used to create a site to spotlight products of your choice.
+
+To Get set up:
+
+- Update the database.yml and mongoid.yml files with your database's credentials
+- Install ImageMagick on your machine (for mac use Homebrew)
+- Once you have the app up and running go to '/setup' and create your account.

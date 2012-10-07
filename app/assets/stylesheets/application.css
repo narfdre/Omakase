@@ -67,6 +67,19 @@ body > .navbar .brand:hover {
   opacity: .2;
 }
 
+.image-wrapper{
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  line-height: 200px
+}
+.image-wrapper:hover{
+  background: none;
+}
+.image-wrapper img{
+  vertical-align: middle;
+}
+
 .header{
   position: relative;
   padding: 5px 0;
@@ -80,14 +93,6 @@ body > .navbar .brand:hover {
   -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
      -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
           box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
-}
-.image-wrapper:hover{
-  background: none;
-}
-img.thumbnail{
-  width: 200px;
-  height: 200px;
-  display: inline-block;
 }
 
 /* Desktop
