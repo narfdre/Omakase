@@ -21,7 +21,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'less-rails-bootstrap'
 gem 'mini_magick', :git => 'http://github.com/probablycorey/mini_magick.git'
 gem 'carrierwave', :git => "http://github.com/jnicklas/carrierwave.git"
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
