@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.string   "description"
     t.string   "source"
     t.boolean  "featured"

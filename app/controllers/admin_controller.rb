@@ -53,12 +53,6 @@ class AdminController < ApplicationController
   end
 
   private
-  	def require_login
-  		if session['user_id'] == nil
-  			redirect_to "/login"
-	  	end
-  	end
-
     def require_setup
       if User.all.size > 0
         redirect_to "/admin"

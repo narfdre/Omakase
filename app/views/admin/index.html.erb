@@ -23,7 +23,6 @@
 				<th>Source</th>
 				<th>Artist</th>
 				<th>Referer</th>
-				<th>Referer's Contact</th>
 				<th class="text-center">Featured</th>
 				<th class="text-center">Display</th>
 			</tr>
@@ -34,8 +33,15 @@
 		    	<td><%=i.name %></td>
 		    	<td><%=i.source %></td>
 		    	<td><%=i.artist %></td>
-		    	<td><%=i.referer %></td>
-		    	<td><%=i.contact %></td>
+		    	<td>
+		    		<% if i.contact =~ /^@[a-zA-Z0-9]*/ %>
+		    		<a href="http://twitter.com/<%= i.contact%>">
+		    		<% else %>
+		    		<a href="mailto:<%= i.contact%>">
+		    		<% end %>
+		    			<%=i.referer %>
+		    		</a>
+		    	</td>
 		    	<td class="text-center">
 		    		<%if i.featured %>
 		    			<span class="icon-star"></span>

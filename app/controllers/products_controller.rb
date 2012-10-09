@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :require_login, :only => :edit
   # GET /products
   # GET /products.json
   def index
@@ -10,10 +11,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /products/1
-  # GET /products/1.json
+  # GET /products/:slug
+  # GET /products/:slug.json
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by_slug(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +42,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(params[:product])
+    @product.slug = @product.name.gsub(' ', '-')
 
     respond_to do |format|
       if @product.save
