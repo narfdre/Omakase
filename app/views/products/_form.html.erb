@@ -1,8 +1,7 @@
-<%= form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @product, :html => { :class => 'form-horizontal', :method => 'post' }, :url => { :action => 'create' } do |f| %>
   <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
+    <div id="error_explanation" class="alert alert-error">
+      <h4>Please fix the following <%= pluralize(@product.errors.count, "error") %> and try again:</h4>
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -49,9 +48,9 @@
   </div>
   <div class="field control-group">
     <%= f.label :your_contact_info, :class => 'control-label' %>
-    <span>(twitter or email)</span>
     <div class="controls">
       <%= f.text_field :contact %>
+      <small><samp>(twitter or email)</samp></small>
     </div>
   </div>
   <div class="actions control-group">

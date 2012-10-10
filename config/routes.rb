@@ -1,8 +1,9 @@
 Omakase::Application.routes.draw do
   root :to => 'home#index'
-  resources :products, :except => :new
-  resources :users
+  resources :products, :except => [:new, :create]
+  match '/upload' => 'products#create', :via => :post
   match '/upload' => 'products#new'
+  resources :users
   match '/images/uploads/*path' => 'gridfs#serve'
   match '/admin' => 'admin#index'
   match '/login' => 'admin#login', :via => :post

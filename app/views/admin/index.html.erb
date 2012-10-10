@@ -29,8 +29,8 @@
 		</thead>
 		<tbody>
 		  <% @products.each do |i| %>
-		    <tr data-content="<img src=&quot;<%=i.image_url(:thumb) %>&quot;/>" data-trigger="hover" data-placement="bottom" data-html="true">
-		    	<td><%=i.name %></td>
+		    <tr data-id="<%= i.id%>">
+		    	<td data-content="<img src=&quot;<%=i.image_url(:thumb) %>&quot;/>" data-trigger="hover" data-placement="right" data-html="true" data-type="tooltip"><%=i.name %></td>
 		    	<td><%=i.source %></td>
 		    	<td><%=i.artist %></td>
 		    	<td>
@@ -44,16 +44,16 @@
 		    	</td>
 		    	<td class="text-center">
 		    		<%if i.featured %>
-		    			<span class="icon-star"></span>
+		    			<span class="icon-star clickable"></span>
 		    		<% else %>
-						<span class="icon-star-empty"></span>
+						<span class="icon-star-empty clickable"></span>
 		    		<% end %>
 		    	</td>
 		    	<td class="text-center">
 		    		<% if i.display %>
-		    			<span class="icon-check"></span>
+		    			<span class="icon-check clickable"></span>
 		    		<% else %>
-						<span class="icon-check-empty"></span>
+						<span class="icon-check-empty clickable"></span>
 		    		<% end %>
 		    	</td>
 		    </tr>

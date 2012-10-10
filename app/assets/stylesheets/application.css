@@ -71,6 +71,7 @@ body > .navbar .brand:hover {
 .image-wrapper{
   height: 200px;
   width: 200px;
+  text-align: center;
   display: inline-block;
   line-height: 200px;
   -webkit-transition: all .2s linear;
@@ -104,6 +105,10 @@ body > .navbar .brand:hover {
 .table td.text-center,
 .table th.text-center{text-align: center;}
 
+.clickable{
+  cursor: pointer;
+}
+
 @media (max-width: 979px) {
   /* Unfloat brand */
   body > .navbar-fixed-top .brand {
@@ -125,6 +130,11 @@ body > .navbar .brand:hover {
     margin-right: -20px;
   }
 
+  .awesome-header .container{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .image-wrapper{
     height: 165px;
     width: 165px;
@@ -132,4 +142,14 @@ body > .navbar .brand:hover {
     line-height: 165px
   }
 }
-
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+.image-wrapper{
+    height: 125px;
+    width: 125px;
+    display: inline-block;
+    line-height: 125px
+  }
+}

@@ -38,11 +38,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  # POST /products
-  # POST /products.json
+  # POST /upload
+  # POST /upload.json
   def create
     @product = Product.new(params[:product])
-    @product.slug = @product.name.gsub(' ', '-')
 
     respond_to do |format|
       if @product.save
