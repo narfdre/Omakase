@@ -12,6 +12,7 @@ Omakase::Application.routes.draw do
   match '/setup' => 'admin#setup'
   match '/logout' => 'admin#logout'
   match '/products/:id/featured' => 'products#makeFeatured', :via => :put
+  match '/products/:id/featured' => 'products#removeFeatured', :via => :delete
   match '/products/:id/display' => 'products#display', :via => :put
 
   # The priority is based upon order of creation:

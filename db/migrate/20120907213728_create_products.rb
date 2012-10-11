@@ -5,9 +5,8 @@ class CreateProducts < ActiveRecord::Migration
       t.string :slug
       t.string :description
       t.string :source
-      t.boolean :featured
-      t.boolean :display
-      t.boolean :deleted
+      t.boolean :featured, :default => false
+      t.boolean :display, :default => false
       t.string :artist
       t.string :referer
       t.string :contact

@@ -4,7 +4,7 @@ $(document).ready(function(){
 			$(this).popover('show');
 		});
 	});
-	$('.icon-star-empty').on('click', function(e){
+	$('.table tbody').on('click' , '.icon-star-empty', function(e){
 		var target = $(e.target),
 			id = target.closest('tr').attr('data-id');
 		$.ajax({
@@ -15,7 +15,7 @@ $(document).ready(function(){
 			}
 		});
 	});
-	$('.icon-star').on('click', function(e){
+	$('.table tbody').on('click' , '.icon-star', function(e){
 		var target = $(e.target),
 			id = target.closest('tr').attr('data-id');
 		$.ajax({
@@ -26,7 +26,7 @@ $(document).ready(function(){
 			}
 		});
 	});
-	$('.icon-check-empty').on('click', function(e){
+	$('.table tbody').on('click' , '.icon-check-empty', function(e){
 		var target = $(e.target),
 			id = target.closest('tr').attr('data-id');
 		$.ajax({

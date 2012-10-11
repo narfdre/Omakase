@@ -18,9 +18,8 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
     t.string   "slug"
     t.string   "description"
     t.string   "source"
-    t.boolean  "featured"
-    t.boolean  "display"
-    t.boolean  "deleted"
+    t.boolean  "featured", :default => false
+    t.boolean  "display", :default => false
     t.string   "artist"
     t.string   "referer"
     t.string   "contact"
@@ -32,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
   create_table "settings", :force => true do |t|
     t.string   "app_name"
     t.string   "product_type"
+    t.string   "description"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

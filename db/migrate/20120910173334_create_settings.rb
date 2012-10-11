@@ -3,6 +3,7 @@ class CreateSettings < ActiveRecord::Migration
     create_table :settings do |t|
       t.string :app_name
       t.string :product_type
+      t.string :description
 
       t.timestamps
     end

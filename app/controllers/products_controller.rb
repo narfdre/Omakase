@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :require_login, :only => [:edit, :makeFeatured]
+  before_filter :require_login, :except => [:show, :new]
   # GET /products
   # GET /products.json
   def index
@@ -85,6 +85,16 @@ class ProductsController < ApplicationController
   def makeFeatured
     @product = Product.find(params[:id])
     @product.featured = true;
+    if @product.save
+      render json: @product, :status => :ok
+    else
+      render json: @product, :status => '500'
+    end
+  end
+
+  def removeFeatured
+    @product = Product.find(params[:id])
+    @product.featured = false;
     if @product.save
       render json: @product, :status => :ok
     else

@@ -39,6 +39,12 @@
 			</div>
 		</div>
 		<div class="field control-group">
+			<%= label_tag :description, "App Description", :class => 'control-label' %>
+			<div class="controls">
+				<%= text_area :settings, :description, :cols => 10, :rows => 5 %>
+			</div>
+		</div>
+		<div class="field control-group">
 			<div class="controls">
 				<%= submit_tag "Start using omakase!", :class => "btn btn-primary" %>
 			</div>

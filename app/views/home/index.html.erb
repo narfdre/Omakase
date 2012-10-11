@@ -2,7 +2,7 @@
 	<div class="container">
 		<% if @settings %>
 			<h1><%= @settings.app_name%></h1>
-			<p>Chef's Choice, please enjoy the hand picked <%= @settings.product_type %>.</p>
+			<p><%= @settings.description %></p>
 		<% else %>
 			<h1>Omakase!</h1>
 			<p>Chef's Choice, please enjoy the hand picked products.</p>
