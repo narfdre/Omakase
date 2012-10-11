@@ -3,7 +3,7 @@ Omakase::Application.routes.draw do
   resources :products, :except => [:new, :create]
   match '/upload' => 'products#create', :via => :post
   match '/upload' => 'products#new'
-  resources :users
+  resources :users, :except => :destroy
   match '/images/uploads/*path' => 'gridfs#serve'
   match '/admin' => 'admin#index'
   match '/login' => 'admin#login', :via => :post
@@ -11,6 +11,8 @@ Omakase::Application.routes.draw do
   match '/setup' => 'admin#createSetup', :via => :post
   match '/setup' => 'admin#setup'
   match '/logout' => 'admin#logout'
+  match '/products/:id/featured' => 'products#makeFeatured', :via => :put
+  match '/products/:id/display' => 'products#display', :via => :put
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

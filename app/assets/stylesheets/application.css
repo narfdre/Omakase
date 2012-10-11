@@ -69,11 +69,13 @@ body > .navbar .brand:hover {
 }
 
 .image-wrapper{
+  position: relative;
   height: 200px;
   width: 200px;
   text-align: center;
   display: inline-block;
   line-height: 200px;
+  margin: 5px 0;
   -webkit-transition: all .2s linear;
      -moz-transition: all .2s linear;
       -ms-transition: all .2s linear;
@@ -107,6 +109,65 @@ body > .navbar .brand:hover {
 
 .clickable{
   cursor: pointer;
+  display: inline-block;
+}
+
+.ribbon-wrapper{
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.ribbon {
+  font: bold 15px Sans-Serif;
+  color: #333;
+  text-align: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon.featured{
+  background-color: #3C58B8;
+}
+
+.ribbon.new{
+  background-color: #AD190A; 
+}
+
+.ribbon:before, .ribbon:after {
+  content: "";
+  border-top:   3px solid #6e8900;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon:before {
+  left: 0;
+}
+.ribbon:after {
+  right: 0;
+}​
+
+
+
+span[rel="tooltip"]{
+  display: inline-block;
 }
 
 @media (max-width: 979px) {

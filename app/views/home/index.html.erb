@@ -19,6 +19,15 @@
 	<div class="container-fluid">
 	  <% @products.each do |i| %>
 	    <a class="image-wrapper center-thumb img-polaroid" href="/products/<%= i.slug%>">
+	    	<% if i.featured? %>
+		    	<div class="ribbon-wrapper">
+		    		<div class="ribbon featured">Featured</div>
+		    	</div>
+		    <% elsif i.created_at > 1.day.ago %>
+		    	<div class="ribbon-wrapper">
+		    		<div class="ribbon new">New</div>
+		    	</div>
+	    	<% end %>
 	      <%= image_tag(i.image_url(:thumb))%>
 	    </a>
 	  <% end %>

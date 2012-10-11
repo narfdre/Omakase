@@ -5,6 +5,10 @@ class Product < ActiveRecord::Base
 
   validates :name, :description, :source, :artist, :image, :referer, :contact, :presence => true
 
+  def self.featured?
+  	return featured
+  end
+
   def generate_slug
       self.slug = name.gsub(' ', '-')
   end

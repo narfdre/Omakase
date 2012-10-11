@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :require_login, :only => :edit
+  before_filter :require_login, :only => [:edit, :makeFeatured]
   # GET /products
   # GET /products.json
   def index
@@ -79,6 +79,26 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to products_url }
       format.json { head :no_content }
+    end
+  end
+
+  def makeFeatured
+    @product = Product.find(params[:id])
+    @product.featured = true;
+    if @product.save
+      render json: @product, :status => :ok
+    else
+      render json: @product, :status => '500'
+    end
+  end
+
+  def display
+    @product = Product.find(params[:id])
+    @product.display = true;
+    if @product.save
+      render json: @product, :status => :ok
+    else
+      render json: @product, :status => '500'
     end
   end
 end
