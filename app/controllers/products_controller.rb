@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :require_login, :except => [:show, :new]
+  before_filter :require_login, :except => [:show, :new, :create]
   # GET /products
   # GET /products.json
   def index

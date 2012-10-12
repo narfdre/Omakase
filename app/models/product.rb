@@ -1,15 +1,17 @@
 class Product < ActiveRecord::Base
   attr_accessible :name, :slug, :description, :source, :featured, :display, :deleted, :artist, :image, :referer, :contact
   mount_uploader :image, ImageUploader
-  before_save :generate_slug
+  before_save :generate_slug, :scrub_source
 
-  validates :name, :description, :source, :artist, :image, :referer, :contact, :presence => true
-
-  def self.featured?
-  	return featured
-  end
+  validates :name, :description, :source, :image, :referer, :contact, :presence => true
 
   def generate_slug
       self.slug = name.gsub(' ', '-')
+  end
+
+  def scrub_source
+    unless self.source =~ /^(http|https):\/\//
+      self.source = "http://#{self.source}"
+    end
   end
 end

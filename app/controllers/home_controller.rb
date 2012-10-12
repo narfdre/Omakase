@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   #root
   def index
-    @products = Product.find(:all, :conditions => ["display = ?", true], :limit => 25, :order => "featured, created_at DESC")
+    @products = Product.find(:all, :conditions => ["display = ?", true], :limit => 25, :order => "featured DESC, created_at DESC")
     @settings = Setting.first
 
   	respond_to do |format|

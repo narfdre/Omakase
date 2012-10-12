@@ -117,8 +117,8 @@ body > .navbar .brand:hover {
   height: 88px;
   overflow: hidden;
   position: absolute;
-  top: -3px;
-  right: -3px;
+  top: -1px;
+  right: -1px;
 }
 
 .ribbon {
@@ -131,8 +131,8 @@ body > .navbar .brand:hover {
   -o-transform:      rotate(45deg);
   position: relative;
   padding: 7px 0;
-  left: -5px;
-  top: 15px;
+  left: -2px;
+  top: 12px;
   width: 120px;
   color: #fff;
   -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
@@ -145,7 +145,10 @@ body > .navbar .brand:hover {
 }
 
 .ribbon.new{
-  background-color: #AD190A; 
+  background-color: #AD190A;
+  padding: 0;
+  top: 8px;
+  width: 143px; 
 }
 
 .ribbon:before, .ribbon:after {

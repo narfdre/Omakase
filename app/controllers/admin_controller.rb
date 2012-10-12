@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   protect_from_forgery
 
   def index
-  	@products = Product.find(:all, :order => "featured, created_at DESC")
+  	@products = Product.find(:all, :order => "featured DESC, created_at DESC")
   end
 
   def loggingIn
