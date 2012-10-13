@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :source
       t.boolean :featured, :default => false
       t.boolean :display, :default => false
-      t.string :artist
+      t.string :creator
       t.string :referer
       t.string :contact
       t.string :image

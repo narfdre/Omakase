@@ -21,7 +21,7 @@
 			<tr>
 				<th>Name</th>
 				<th>Source</th>
-				<th>Artist</th>
+				<th>Creator</th>
 				<th>Referer</th>
 				<th class="text-center">
 					<span class="icon-star" rel="tooltip" data-title="featured" data-trigger="hover"></span>
@@ -43,7 +43,7 @@
 		    			<%=i.source %>
 		    		</a>
 		    	</td>
-		    	<td><%=i.artist %></td>
+		    	<td><%=i.creator %></td>
 		    	<td>
 		    		<% if i.contact =~ /^@[a-zA-Z0-9]*/ %>
 		    			<a href="http://twitter.com/<%= i.contact%>">

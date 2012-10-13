@@ -23,4 +23,11 @@ $(document).ready(function(){
 		navs.removeClass('active');
 		currentNav.addClass('active');
 	}
+	//run as soon as pages loads
+	var alerts = $('.alert').not('.alert-error');
+	if(alerts.length > 0){
+		setTimeout(function(){
+			alerts.slideUp();
+		}, 5000);
+	}
 });

@@ -5,9 +5,23 @@
 		  <%= notice %>
 		</div>
 	<% end%>
-	<h1>Set Up</h1>
-	<p>Looks like this is your first time using Omakase. Please fill out the following form to get started. We will then redirect you to the admin page.</p>
-	<%= form_tag("/setup", :method => "post", :class => "form-horizontal") do %>
+	<h1>Edit App Setting</h1>
+	<% if @settings.errors.any? || @user.errors.any? %>
+		<div id="error_explanation" class="alert alert-error">
+		  <h4>Please fix the following <%= pluralize(@settings.errors.count + @user.errors.count, "error") %> and try again:</h4>
+		  <ul>
+		  <% @settings.errors.full_messages.each do |msg| %>
+		    <li><%= msg %></li>
+		  <% end %>
+		  <% @user.errors.full_messages.each do |msg| %>
+		    <li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	<% end %>
+	<%= form_tag("/setup/edit", :method => :post, :class => "form-horizontal") do %>
+		<%= hidden_field :user, :id %>
+		<%= hidden_field :settings, :id %>
 		<div class="field control-group">
 			<%= label_tag :name, "Name", :class => 'control-label' %>
 			<div class="controls">
@@ -45,9 +59,17 @@
 			</div>
 		</div>
 		<div class="field control-group">
+			<%= label_tag :simple, "Simple App", :class => 'control-label' %>
+			<div class="controls">
+				<%= check_box :settings, :simple, {}, true, false %>
+				<small><samp>A simple app does not have details pages</samp></small>
+			</div>
+		</div>
+		<div class="field control-group">
 			<div class="controls">
 				<%= submit_tag "Start using omakase!", :class => "btn btn-primary" %>
 			</div>
 		</div>
 	<% end %>
+
 </div>

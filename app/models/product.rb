@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :name, :slug, :description, :source, :featured, :display, :deleted, :artist, :image, :referer, :contact
+  attr_accessible :name, :slug, :description, :source, :featured, :display, :deleted, :creator, :image, :referer, :contact
   mount_uploader :image, ImageUploader
   before_save :generate_slug, :scrub_source
 

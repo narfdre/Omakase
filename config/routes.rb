@@ -1,6 +1,6 @@
 Omakase::Application.routes.draw do
   root :to => 'home#index'
-  resources :products, :except => [:new, :create]
+  resources :products, :except => [:new, :create, :index]
   match '/upload' => 'products#create', :via => :post
   match '/upload' => 'products#new'
   resources :users, :except => :destroy
@@ -8,8 +8,10 @@ Omakase::Application.routes.draw do
   match '/admin' => 'admin#index'
   match '/login' => 'admin#login', :via => :post
   match '/login' => 'admin#loggingIn'
-  match '/setup' => 'admin#createSetup', :via => :post
-  match '/setup' => 'admin#setup'
+  match '/setup' => 'settings#create', :via => :post
+  match '/setup' => 'settings#new'
+  match '/setup/edit' => 'settings#update', :via => :post
+  match '/setup/edit' => 'settings#edit'
   match '/logout' => 'admin#logout'
   match '/products/:id/featured' => 'products#makeFeatured', :via => :put
   match '/products/:id/featured' => 'products#removeFeatured', :via => :delete

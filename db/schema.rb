@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
     t.string   "source"
     t.boolean  "featured", :default => false
     t.boolean  "display", :default => false
-    t.string   "artist"
+    t.string   "creator"
     t.string   "referer"
     t.string   "contact"
     t.string   "image"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120910173359) do
     t.string   "app_name"
     t.string   "product_type"
     t.string   "description"
+    t.boolean  "simple", :default => false
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
