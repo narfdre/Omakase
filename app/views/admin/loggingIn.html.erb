@@ -5,7 +5,7 @@
 		  <%= notice %>
 		</div>
 	<% end%>
-	<h1>Log In</h1>
+	<h1><span class="icon-signin"></span> Log In</h1>
 	<%= form_for @user, :url => {:action => 'login'}, :html => { :class => 'form-horizontal' } do |f| %>
 		<div class="field control-group">
 			<%= f.label :email, :class => 'control-label' %>

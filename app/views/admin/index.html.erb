@@ -5,6 +5,9 @@
 	<li>
 		<a href="/logout"><span class="icon-signout"></span>Logout</a>
 	</li>
+	<li>
+		<a href="/setup/edit"><span class="icon-cogs"></span>Settings</a>
+	</li>
 <% end %>
 
 <div class="container">
@@ -14,7 +17,7 @@
 		  <%= notice %>
 		</div>
 	<% end%>
-	<h1>Admin</h1>
+	<h1><span class="icon-dashboard"></span> Dashboard</h1>
 	<p>use this table to manage uploads</p>
 	<table class="table">
 		<thead>
@@ -28,6 +31,9 @@
 				</th>
 				<th class="text-center">
 					<span class="icon-check" rel="tooltip" data-title="display" data-trigger="hover"></span>
+				</th>
+				<th class="text-center">
+					<span class="icon-pencil" rel="tooltip" data-title="edit" data-trigger="hover"></span>
 				</th>
 				<th class="text-center">
 					<span class="icon-remove-circle" rel="tooltip" data-title="delete" data-trigger="hover"></span>
@@ -58,6 +64,10 @@
 		    	</td>
 		    	<td class="text-center">
 		    		<span class="icon-check<%if !i.display %>-empty<% end %> clickable"></span>
+		    	</td>
+		    	<td class="text-center">
+		    		<a href="/products/<%= i.id %>/edit"><span class="icon-pencil clickable">
+		    		</span></a>
 		    	</td>
 		    	<td class="text-center">
 		    		<span class="icon-remove-circle clickable"></span>

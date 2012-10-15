@@ -107,6 +107,8 @@ body > .navbar .brand:hover {
 .table td.text-center,
 .table th.text-center{text-align: center;}
 
+.table tbody .text-center a {color: #000;}
+.table tbody .text-center a:hover {text-decoration: none;}
 .clickable{
   cursor: pointer;
   display: inline-block;

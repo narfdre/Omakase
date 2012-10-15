@@ -1,36 +1,15 @@
 class ProductsController < ApplicationController
   before_filter :require_login, :except => [:show, :new, :create]
-  # GET /products
-  # GET /products.json
-  def index
-    @products = Product.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
-    end
-  end
 
   # GET /products/:slug
   # GET /products/:slug.json
   def show
     @product = Product.find_by_slug(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @product }
-    end
   end
 
-  # GET /products/new
-  # GET /products/new.json
+  # GET /upload
   def new
     @product = Product.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @product }
-    end
   end
 
   # GET /products/1/edit
@@ -46,10 +25,8 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         format.html { redirect_to root_path, notice: 'Product was successfully submitted. Thank you!' }
-        format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,11 +38,9 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to '/admin', notice: 'Product was successfully updated.' }
       else
         format.html { render action: "edit" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,11 +49,11 @@ class ProductsController < ApplicationController
   # DELETE /products/1.json
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy
-
-    respond_to do |format|
-      format.html { redirect_to products_url }
-      format.json { head :no_content }
+    
+    if @product.destroy
+      render json: @product, :status => :ok
+    else
+      render json: @product, :status => '500'
     end
   end
 

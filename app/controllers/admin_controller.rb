@@ -8,7 +8,11 @@ class AdminController < ApplicationController
   end
 
   def loggingIn
-  	@user = User.new
+    if session[:user_id] == nil
+      @user = User.new
+    else
+      redirect_to "/admin"
+    end
   end
 
   def login

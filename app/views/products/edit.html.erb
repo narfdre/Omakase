@@ -1,3 +1,10 @@
-<h1>Editing product</h1>
+<% content_for :links do %>
+	<li>
+		<a href="/admin"><span class="icon-dashboard"></span>Dashboad</a>
+	</li>
+<% end %>
+<div class="container">
+	<h1><span class="icon-pencil"></span> Editing product</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
+</div>

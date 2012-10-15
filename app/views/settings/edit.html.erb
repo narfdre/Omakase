@@ -1,3 +1,8 @@
+<% content_for :links do %>
+	<li>
+		<a href="/admin"><span class="icon-dashboard"></span>Dashboad</a>
+	</li>
+<% end %>
 <div class="container">
 	<% if !notice.blank? %>
 		<div class="alert">
@@ -5,7 +10,7 @@
 		  <%= notice %>
 		</div>
 	<% end%>
-	<h1>Edit App Setting</h1>
+	<h1><span class="icon-cogs"></span> App Setting</h1>
 	<% if @settings.errors.any? || @user.errors.any? %>
 		<div id="error_explanation" class="alert alert-error">
 		  <h4>Please fix the following <%= pluralize(@settings.errors.count + @user.errors.count, "error") %> and try again:</h4>

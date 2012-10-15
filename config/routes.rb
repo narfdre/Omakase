@@ -2,7 +2,7 @@ Omakase::Application.routes.draw do
   root :to => 'home#index'
   resources :products, :except => [:new, :create, :index]
   match '/upload' => 'products#create', :via => :post
-  match '/upload' => 'products#new'
+  match '/upload' => 'products#new', :as => :products
   resources :users, :except => :destroy
   match '/images/uploads/*path' => 'gridfs#serve'
   match '/admin' => 'admin#index'

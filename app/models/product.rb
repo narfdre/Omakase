@@ -3,8 +3,9 @@ class Product < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   before_save :generate_slug, :scrub_source
 
-  validates :name, :description, :source, :image, :referer, :contact, :presence => true
-
+  validates :name, :description, :source, :referer, :contact, :presence => true
+  validates :image, :presence => true, :if => :new_record?
+  
   def generate_slug
       self.slug = name.gsub(' ', '-')
   end

@@ -1,4 +1,4 @@
-<%= form_for @product, :html => { :class => 'form-horizontal', :method => :post }, :url => { :action => :create } do |f| %>
+<%= form_for @product, :html => { :class => 'form-horizontal'} do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation" class="alert alert-error">
       <h4>Please fix the following <%= pluralize(@product.errors.count, "error") %> and try again:</h4>

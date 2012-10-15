@@ -37,6 +37,17 @@ $(document).ready(function(){
 			}
 		});
 	});
+	$('.table tbody').on('click' , '.icon-remove-circle', function(e){
+		var target = $(e.target),
+			id = target.closest('tr').attr('data-id');
+		$.ajax({
+			url: '/products/' + id,
+			type: 'delete',
+			success: function(){
+				target.closest('tr').remove();
+			}
+		});
+	});
 
 	$('[rel="tooltip"]').tooltip();
 });
