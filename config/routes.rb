@@ -1,4 +1,5 @@
 Omakase::Application.routes.draw do
+
   root :to => 'home#index'
   resources :products, :except => [:new, :create, :index]
   match '/upload' => 'products#create', :via => :post
