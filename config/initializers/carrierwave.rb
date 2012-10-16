@@ -1,5 +1,8 @@
 CarrierWave.configure do |config|
 
+  puts "77777777777777777777"
+  puts Rails.env
+
   config.storage              = :grid_fs
   config.grid_fs_access_url   = "/images"
 
@@ -16,5 +19,5 @@ CarrierWave.configure do |config|
     config.grid_fs_username     = Mongoid.database.connection.auths[0]['username']
     config.grid_fs_password     = Mongoid.database.connection.auths[0]['password']
   end
-  
+
 end
