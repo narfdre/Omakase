@@ -1,8 +1,5 @@
 CarrierWave.configure do |config|
 
-  puts "77777777777777777777"
-  puts Rails.env
-
   config.storage              = :grid_fs
   config.grid_fs_access_url   = "/images"
 
