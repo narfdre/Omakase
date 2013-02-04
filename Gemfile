@@ -22,8 +22,8 @@ end
 
 gem 'jquery-rails'
 gem 'mini_magick', :git => 'http://github.com/probablycorey/mini_magick.git'
-gem 'carrierwave', :git => "http://github.com/jnicklas/carrierwave.git"
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'carrierwave', :git => "http://github.com/jnicklas/carrierwave.git", :tag => "v0.6.1"
+gem 'carrierwave-mongoid', '0.2.0', :require => 'carrierwave/mongoid'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
